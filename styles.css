@@ -2,26 +2,6 @@ body {
   background: url(https://i.ibb.co/BnLZV0d/2u6mofasdfadas.png);
 }
 
-h1 {
-  color: #000;
-}
-
-.cuerpo {
-  margin-top: 10px;
-}
-
-.boton {
-  display: -webkit-box;
-  display: -ms-flexbox;
-}
-
-img {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
 .boton {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -29,6 +9,7 @@ img {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   margin-top: 200px;
+  padding-left: 3px;
 }
 
 .cuerpo {
@@ -38,10 +19,6 @@ img {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-}
-
-.boton {
-  padding-left: 3px;
 }
 
 span.boton1 {
