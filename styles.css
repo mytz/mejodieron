@@ -2,19 +2,6 @@ body {
     background: url(https://i.ibb.co/BnLZV0d/2u6mofasdfadas.png);
   }
   
-  h1 {
-    color: #000;
-  }
-  
-  .cuerpo {
-    margin-top: 10px;
-  }
-  
-  .boton {
-    display: -webkit-box;
-    display: -ms-flexbox;
-  }
-  
   img {
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -40,4 +27,3 @@ body {
     -ms-flex-pack: center;
     justify-content: center;
   }
-  /*# sourceMappingURL=styles.css.map */
