@@ -1,33 +1,43 @@
 body {
-  background: url(https://i.ibb.co/BnLZV0d/2u6mofasdfadas.png);
-}
-
-.boton {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  margin-top: 200px;
-  padding-left: 3px;
-}
-
-.cuerpo {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-span.boton1 {
-  background-image: url(https://i.ibb.co/qx18yLn/mytyelllow4.png);
-  background-repeat: no-repeat;
-  display: block;
-}
-
-span.boton1:hover img {
-  visibility: hidden;
-
-}
+    background: url(https://i.ibb.co/BnLZV0d/2u6mofasdfadas.png);
+  }
+  
+  h1 {
+    color: #000;
+  }
+  
+  .cuerpo {
+    margin-top: 10px;
+  }
+  
+  .boton {
+    display: -webkit-box;
+    display: -ms-flexbox;
+  }
+  
+  img {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  .boton {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-top: 200px;
+    padding-left: 3px;
+  }
+  
+  .cuerpo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+  /*# sourceMappingURL=styles.css.map */
