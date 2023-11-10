@@ -3,8 +3,38 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="styles.css" />
+    
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+
   </head>
 <div class="cuerpo">
-    <div class="boton">
-      <a class='boton1' href='https://xat.me/Schroederz'><img class='boton1' onmouseout='this.src=&apos;https://github.com/mytz/mejodieron/assets/98504002/0586026d-1cab-4df9-b456-6e960bb49c80&apos;' onmouseover='this.src=&apos;https://github.com/mytz/mejodieron/assets/98504002/fe22e8c3-4f33-4673-b675-2e9fe40a2426&apos;' src='https://github.com/mytz/mejodieron/assets/98504002/0586026d-1cab-4df9-b456-6e960bb49c80'/></a>
-    </div>
+  <div class="boton">
+    <a class='boton1' href='https://xat.me/Schroederz'>
+      <img class='boton1'
+        onmouseover="playSoundAndChangeImage('lights - luces.wav', 'https://github.com/mytz/mejodieron/assets/98504002/fe22e8c3-4f33-4673-b675-2e9fe40a2426')"
+        onmouseout="resetImage('https://github.com/mytz/mejodieron/assets/98504002/0586026d-1cab-4df9-b456-6e960bb49c80')"
+        src='https://github.com/mytz/mejodieron/assets/98504002/0586026d-1cab-4df9-b456-6e960bb49c80'/>
+    </a>
+  </div>
+</div>
+
+<audio id="sonido" preload="auto">
+  <source src="lights - luces.wav" type="audio/wav">
+  Tu navegador no soporta el elemento de audio.
+</audio>
+
+<script>
+  function playSoundAndChangeImage(soundFileName, newImageSrc) {
+    var audio = document.getElementById('sonido');
+    audio.src = soundFileName;
+    audio.play();
+
+    var image = document.querySelector('.boton1 img');
+    image.src = newImageSrc;
+  }
+
+  function resetImage(originalImageSrc) {
+    var image = document.querySelector('.boton1 img');
+    image.src = originalImageSrc;
+  }
+</script>
