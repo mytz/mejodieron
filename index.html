@@ -1,10 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="styles.css" />
 
+    <style>
+        /* Agregamos estilos para el desenfoque */
+        .cuerpo {
+            filter: blur(5px);
+        }
+
+        /* Centramos el osito */
+        .osito {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+        }
+    </style>
+
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+
 </head>
 
 <body>
@@ -17,34 +37,40 @@
                     src='mytblue4.png'/>
             </a>
         </div>
+
+        <!-- Agregamos el osito -->
+        <img src="osito.png" alt="osito" class="osito" onclick="disparar()">
+
+        <audio id="sonido" preload="auto">
+            <source src="swish1.mp3" type="audio/mp3">
+            Tu navegador no soporta el elemento de audio.
+        </audio>
+
+        <script>
+            function playSoundAndChangeImage(soundFileName, newImageSrc) {
+                var audio = document.getElementById('sonido');
+                audio.src = soundFileName;
+                audio.play();
+
+                var image = document.querySelector('.boton1 img');
+                image.src = newImageSrc;
+            }
+
+            function resetImage(originalImageSrc) {
+                var image = document.querySelector('.boton1 img');
+                image.src = originalImageSrc;
+            }
+
+            function disparar() {
+                var audio = new Audio('disparo.wav');
+                audio.play();
+
+                // Ocultamos el osito y quitamos el desenfoque al cuerpo
+                document.querySelector('.osito').style.display = 'none';
+                document.querySelector('.cuerpo').style.filter = 'none';
+            }
+        </script>
     </div>
-
-    <audio id="sonido" preload="auto">
-        <source src="swish1.mp3" type="audio/mp3">
-        Tu navegador no soporta el elemento de audio.
-    </audio>
-
-    <!-- Añade el botón invisible -->
-    <button id="invisibleButton" style="display: none;"></button>
-
-    <script>
-        function playSoundAndChangeImage(soundFileName, newImageSrc) {
-            var audio = document.getElementById('sonido');
-            audio.src = soundFileName;
-            audio.play();
-
-            var image = document.querySelector('.boton1 img');
-            image.src = newImageSrc;
-        }
-
-        function resetImage(originalImageSrc) {
-            var image = document.querySelector('.boton1 img');
-            image.src = originalImageSrc;
-        }
-
-        // Añade esta línea para hacer clic en el botón invisible al cargar la página
-        document.addEventListener('DOMContentLoaded', function () {
-            document.getElementById('invisibleButton').click();
-        });
-    </script>
 </body>
+
+</html>
