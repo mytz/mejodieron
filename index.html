@@ -8,17 +8,11 @@
     <link rel="stylesheet" type="text/css" href="styles.css" />
 
     <style>
-        /* Agregamos estilos para el desenfoque */
-        .cuerpo {
-            filter: blur(5px);
-        }
-
         /* Centramos el osito */
-        .osito {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+        .mute {
+            position: fixed;
+            bottom: 0;
+            right: 0;
             cursor: pointer;
         }
     </style>
@@ -38,8 +32,8 @@
             </a>
         </div>
 
-        <!-- Agregamos el osito -->
-        <img src="osito.png" alt="osito" class="osito" onclick="disparar()">
+        <!-- Agregamos el botón de mute en la esquina inferior derecha -->
+        <img src="mute.png" alt="mute" class="mute" onclick="disparar()">
 
         <audio id="sonido" preload="auto">
             <source src="swish1.mp3" type="audio/mp3">
@@ -62,12 +56,11 @@
             }
 
             function disparar() {
-                var audio = new Audio('disparo.wav');
+                var audio = new Audio('mute.wav');
                 audio.play();
 
-                // Ocultamos el osito y quitamos el desenfoque al cuerpo
-                document.querySelector('.osito').style.display = 'none';
-                document.querySelector('.cuerpo').style.filter = 'none';
+                // Ocultamos el botón de mute
+                document.querySelector('.mute').style.display = 'none';
             }
         </script>
     </div>
