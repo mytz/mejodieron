@@ -1,40 +1,50 @@
 <head>
     <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="styles.css" />
-    
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
 
-  </head>
-<div class="cuerpo">
-  <div class="boton">
-    <a class='boton1' href='https://xat.me/Schroederz'>
-      <img class='boton1'
-        onmouseover="playSoundAndChangeImage('swish1.mp3', 'mytyelllow4.png')"
-        onmouseout="resetImage('mytblue4.png')"
-        src='mytblue4.png'/>
-    </a>
-  </div>
-</div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+</head>
 
-<audio id="sonido" preload="auto">
-  <source src="swish1.mp3" type="audio/mp3">
-  Tu navegador no soporta el elemento de audio.
-</audio>
+<body>
+    <div class="cuerpo">
+        <div class="boton">
+            <a class='boton1' href='https://xat.me/Schroederz'>
+                <img class='boton1'
+                    onmouseover="playSoundAndChangeImage('swish1.mp3', 'mytyelllow4.png')"
+                    onmouseout="resetImage('mytblue4.png')"
+                    src='mytblue4.png'/>
+            </a>
+        </div>
+    </div>
 
-<script>
-  function playSoundAndChangeImage(soundFileName, newImageSrc) {
-    var audio = document.getElementById('sonido');
-    audio.src = soundFileName;
-    audio.play();
+    <audio id="sonido" preload="auto">
+        <source src="swish1.mp3" type="audio/mp3">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
 
-    var image = document.querySelector('.boton1 img');
-    image.src = newImageSrc;
-  }
+    <!-- Añade el botón invisible -->
+    <button id="invisibleButton" style="display: none;"></button>
 
-  function resetImage(originalImageSrc) {
-    var image = document.querySelector('.boton1 img');
-    image.src = originalImageSrc;
-  }
-</script>
+    <script>
+        function playSoundAndChangeImage(soundFileName, newImageSrc) {
+            var audio = document.getElementById('sonido');
+            audio.src = soundFileName;
+            audio.play();
+
+            var image = document.querySelector('.boton1 img');
+            image.src = newImageSrc;
+        }
+
+        function resetImage(originalImageSrc) {
+            var image = document.querySelector('.boton1 img');
+            image.src = originalImageSrc;
+        }
+
+        // Añade esta línea para hacer clic en el botón invisible al cargar la página
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('invisibleButton').click();
+        });
+    </script>
+</body>
