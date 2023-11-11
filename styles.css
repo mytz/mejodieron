@@ -1,6 +1,6 @@
 body {
-    background: "2u6mofasdfadas.png";
-  }
+    background: url('2u6mofasdfadas.png');
+}
   
   img {
     -webkit-user-select: none;
